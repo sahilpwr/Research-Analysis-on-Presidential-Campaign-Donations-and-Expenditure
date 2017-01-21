@@ -1,0 +1,16 @@
+ods graphics / reset imagemap;
+
+/*--SGPLOT proc statement--*/
+proc sgplot data=WORK.IMPORT 
+   (where=(disbursement_amount>10000000));
+	/*--Scatter plot settings--*/
+	scatter x=file_number y=disbursement_amount / transparency=0.0 name='Scatter';
+
+	/*--X Axis--*/
+	xaxis grid;
+
+	/*--Y Axis--*/
+	yaxis grid;
+run;
+
+ods graphics / reset;
