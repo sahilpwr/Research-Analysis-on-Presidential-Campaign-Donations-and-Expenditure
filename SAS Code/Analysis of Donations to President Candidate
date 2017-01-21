@@ -1,0 +1,12 @@
+ods graphics / reset imagemap;
+
+/*--SGPLOT proc statement--*/
+proc sgplot data=WORK.IMPORT;
+	/*--Bar chart settings--*/
+	vbar candidate_name / name='Bar';
+
+	/*--Response Axis--*/
+	yaxis grid;
+run;
+
+ods graphics / reset;
