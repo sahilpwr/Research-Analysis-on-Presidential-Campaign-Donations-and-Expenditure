@@ -1,0 +1,15 @@
+ods graphics / reset imagemap;
+
+/*--SGPLOT proc statement--*/
+proc sgplot data=WORK.IMPORT    (where=(disbursement_desc="LODGING" OR 
+		disbursement_desc="OFFICE SUPPLIES"OR 
+		disbursement_desc="STRATEGIC CONSULTING/TRAVEL" OR 
+		disbursement_desc="TRANSPORTATION" OR disbursement_desc="TRAVEL"));
+	/*--Bar chart settings--*/
+	vbar disbursement_desc / name='Bar';
+
+	/*--Response Axis--*/
+	yaxis grid;
+run;
+
+ods graphics / reset;
