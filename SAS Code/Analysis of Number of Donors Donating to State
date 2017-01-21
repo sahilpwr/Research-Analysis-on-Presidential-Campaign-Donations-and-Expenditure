@@ -1,0 +1,12 @@
+ods graphics / reset imagemap;
+
+/*--SGPLOT proc statement--*/
+proc sgplot data=WORK.IMPORT;
+	/*--Bar chart settings--*/
+	hbar recipient_state / name='Bar';
+
+	/*--Response Axis--*/
+	xaxis grid;
+run;
+
+ods graphics / reset;
